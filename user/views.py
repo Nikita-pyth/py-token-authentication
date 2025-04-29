@@ -21,5 +21,5 @@ class ManageUserView(generics.RetrieveUpdateAPIView):
 
 
 class CreateUserView(generics.CreateAPIView):
-    permission_classes = [AllowAny]
+    permission_classes = (AllowAny,)
     serializer_class = UserSerializer

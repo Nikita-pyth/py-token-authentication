@@ -29,7 +29,7 @@ class GenreViewSet(mixins.CreateModelMixin,
                    mixins.ListModelMixin,
                    GenericViewSet,
                    ):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
@@ -37,7 +37,7 @@ class GenreViewSet(mixins.CreateModelMixin,
 
 class ActorViewSet(mixins.ListModelMixin, mixins.CreateModelMixin,
                    GenericViewSet):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
@@ -45,7 +45,7 @@ class ActorViewSet(mixins.ListModelMixin, mixins.CreateModelMixin,
 
 class CinemaHallViewSet(mixins.ListModelMixin, mixins.CreateModelMixin,
                         GenericViewSet):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     queryset = CinemaHall.objects.all()
     serializer_class = CinemaHallSerializer
